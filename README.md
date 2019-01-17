@@ -29,6 +29,7 @@ The Query method returns an instance of the query class.
  * `username` (type: string) - Username to use to perform query. (*optional*)
  * `password` (type: string) - Password for the above username. (*optional*)
  * `where` (types: string, [string]) - Where clause for the query. The where clause can come in multiple different types. If you pass in a string, it will be accepted as a literal text to go in the where clause. If you pass in an array of strings, they will be And'ed together. (*optional*)
+ * `method` (type: string) - If specified, the method will be called on the specified class / instance. Unless the method is *static*, you will also need to include a `where` clause. If you need to add arguments for the method, please include them in a `props` statement.
 
 __Chainable API__
 Chainable api methods exists to set each property for the query. To use the chainable api, call the method of the name of the property which you would like to set with the first argument being the value of the property and an *optional* second argument being a callback function to execute the query.
