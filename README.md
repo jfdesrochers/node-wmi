@@ -66,3 +66,19 @@ wmi.Query().class('Win32_LogicalDisk', function(err, disks) {
   console.log(disks);
 });
 ```
+
+```javascript
+// Calling methods
+var wmi = require('node-wmi');
+wmi.Query().class('Win32_Volume').where('DriveLetter="C:"').method('DefragAnalysis', function(err, result) {
+  console.log(result)
+});
+```
+
+```javascript
+// Calling methods with parameters
+var wmi = require('node-wmi');
+wmi.Query().class('Win32_Process').method('create').props('C:\\windows\\system32\\notepad.exe', function(err, result) {
+  console.log(result)
+});
+```
